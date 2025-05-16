@@ -1,12 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
   <meta name="theme-color" content="#0d0d0d" />
   <title>XONI - Futurisztikus DJ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/xoni-icon-192.png" />
+  <meta name="theme-color" content="#0d0d0d" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"/>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("Service Worker registered"))
+          .catch((error) => console.error("Service Worker registration failed:", error));
+      });
+    }
+  </script>
+
   <style>
     body {
       margin: 0;
@@ -28,14 +45,18 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(0, 255, 247, 0.2), transparent 70%);
+      background: radial-gradient(circle at center, rgba(0,255,247,0.2), transparent 70%);
       animation: pulse 3s infinite ease-in-out;
       z-index: 0;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
+      0%, 100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
     }
 
     header {
@@ -90,7 +111,7 @@
 
     .social-links img:hover {
       transform: scale(1.1);
-    }
+    } 
 
     .music-player {
       max-width: 600px;
@@ -99,13 +120,24 @@
     }
   </style>
 </head>
-
 <body>
   <div class="background-glow"></div>
-  <header>Üdvözöllek Xoni futurisztikus világában</header>
-  <div class="intro">
+ 
+<nav style="position: absolute; top: 20px; right: 20px; z-index: 10;">
+  <a href="index.html" style="color: #00fff7; margin-right: 15px;">Főoldal</a>
+  <a href="blog.html" style="color: #00fff7;">Blog</a>
+</nav>
+
+ <header>Üdvözöllek Xoni futurisztikus világában</header>
+  <div class="intro"> 
+
     <div class="music-player">
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      <iframe 
+        width="100%" 
+        height="166" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay" 
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/xoni25&color=%2300fff7&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
       </iframe>
     </div>
@@ -114,6 +146,7 @@
     <a href="https://www.soundcloud.com/xoni25" target="_blank">
       <button class="neon-button">Listen Now</button>
     </a>
+
     <div class="social-links">
       <a href="https://www.tiktok.com/@xoni533" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
@@ -121,11 +154,24 @@
       <a href="https://youtube.com/@xoni-k5d?si=6kz4A7nxh9ko3-sc" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
       </a>
-      <a href="https://twitter.com/xoni533" target="_blank">
+      <a href="https://twitter.com/xoni19869" target="_blank" aria-label="Twitter">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
       </a>
     </div>
   </div>
-</body>
 
+ <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68264135ca8f99190b5ac986/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+</body>
 </html>
+
